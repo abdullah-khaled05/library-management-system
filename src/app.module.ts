@@ -4,7 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './user/user.module';
 import { Book } from './books/book.entity';
 import { BooksModule } from './books/books.module';
-
+import { MemberModule } from './members/member.module';  
 @Module({
   imports: [
      ConfigModule.forRoot({
@@ -23,6 +23,7 @@ import { BooksModule } from './books/books.module';
     }),
     UsersModule,
     BooksModule,
+    MemberModule,
   ],
 })
 export class AppModule {}
