@@ -16,6 +16,7 @@ export class UsersService {
  async register(registerDto: RegisterUserDto) {
   const { name, email, password } = registerDto;
 
+  console.log('Registering user with email:', email);
   const existingUser = await this.userRepository.findOne({
     where: { email },
   });
@@ -32,6 +33,8 @@ export class UsersService {
     password: hashedPassword,
   });
 
+  console.log('Saving new user:', user);
+  
   return this.userRepository.save(user);
 }
 async login(loginDto: LoginUserDto) {
